@@ -9,7 +9,7 @@ from movie_recommendation import (
 st.set_page_config(page_title="Hybrid Movie Recommender", layout="wide")
 st.title("Hybrid Movie Recommendation System")
 
-# --- User Input Section ---
+#User Input Section
 
 # Select movies for content-based and hybrid modes
 liked_movies = st.multiselect(
@@ -38,7 +38,7 @@ top_n = st.slider("Number of Recommendations:", 5, 20, 10,step=1)
 # Ensure consistency of movieId column
 merged_df['movieId'] = merged_df['movieId'].astype(int)
 
-# --- Recommendation Logic ---
+#  Recommendation Logic 
 recommendations = None
 
 if st.button("Get Recommendations"):
@@ -60,7 +60,7 @@ if st.button("Get Recommendations"):
         else:
             recommendations = "Please enter a valid User ID and select liked movies."
 
-    # --- Result Display ---
+    #  Result Display
     if isinstance(recommendations, str):
         st.warning(recommendations)
 
